@@ -2,18 +2,37 @@ package com.sebas;
 
 import java.util.ArrayList;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
-    Producto p = new Producto("Arroz", 20000, 5);
+        // CREAR PRODUCTO
+        Producto p = new Producto("Arroz", 20000, 5);
 
-    ArrayList<Producto> productos = new ArrayList<>();
-    productos.add(p);
+        //CREAR LISTA PRODUCTOS
+        ArrayList<Producto> productos = new ArrayList<>();
 
-    for (Producto x : productos){
-        System.out.println("La lista de productos es: \n- "+x.getNombre());
-    }
+        // AGREGAR PRODUCTO A LA LISTA DE PRODUCTOS
+        productos.add(p);
+
+        // IMPRIMIR LA LISTA DE PRODUCTOS
+        System.out.println("La lista de productos es: ");
+        for (Producto x : productos){
+            System.out.println("- "+x.getNombre());
+        }
+
+        // LLAMAR EL METODO VENDER INGRESANDO LA CANTIDAD DE PRODUCTOS PARA VENDER
+        p.vender(2);
+
+        // MOSTRAR EL STOCK DEL PRODUCTO
+        for (Producto x : productos){
+            System.out.println("El producto: "+x.getNombre()+" tiene "+x.getStock()+ " unidad(es) en stock");
+        }
+
+    // LLAMAR EL METODO VENDER INGRESANDO LA CANTIDAD DE PRODUCTOS PARA VENDER
+        p.reponer(20);
+        for (Producto x : productos) {
+            System.out.println("El nuevo stock del producto " + x.getNombre() + " es "+ x.getStock());
+        }
     }
 }

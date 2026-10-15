@@ -30,4 +30,26 @@ public class Producto {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+
+    // metodo vender
+    public boolean vender(int cantidad){
+        if (cantidad <= stock && cantidad > 0){
+            stock = stock - cantidad;
+            return true;
+        }
+            return false;
+
+    }
+
+
+    // metodo reponer
+    public boolean reponer(int cantidad){
+        if (cantidad > 0){
+            stock = stock+cantidad;
+            return true;
+        }
+            return  false;
+
+    }
 }
